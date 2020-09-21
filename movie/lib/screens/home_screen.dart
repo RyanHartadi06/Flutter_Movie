@@ -39,6 +39,10 @@ class HomeScreen extends StatelessWidget {
       children: [
         ListCarousel(),
         GreyArea(),
+        Text(
+          "Lihat Semua",
+          style: TextStyle(color: Colors.blue, fontSize: 17.0),
+        ),
         CategoryList(menuItem: menuItem),
         GreyArea(),
         MovieList(title: "Top Rated", movieData: topmovies),

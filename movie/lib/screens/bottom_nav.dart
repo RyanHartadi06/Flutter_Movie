@@ -18,11 +18,11 @@ class _BottomNavState extends State<BottomNav> {
     _pages = [
       {
         'page': HomeScreen(),
-        'title': 'Home',
+        'title': 'SuperMovies',
       },
       {
         'page': DetailMovie(),
-        'title': 'Detail',
+        'title': 'Detail Movie',
       }
     ];
     super.initState();
@@ -41,7 +41,7 @@ class _BottomNavState extends State<BottomNav> {
           iconTheme: IconThemeData(color: Colors.red),
           backgroundColor: Colors.white,
           title: Text(
-            "SuperMovie",
+            _pages[_selectedPagesIndex]['title'],
             style: TextStyle(color: Colors.redAccent),
           ),
           actions: [
