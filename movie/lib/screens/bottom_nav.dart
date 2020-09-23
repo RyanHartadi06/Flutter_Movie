@@ -18,7 +18,7 @@ class _BottomNavState extends State<BottomNav> {
     _pages = [
       {
         'page': HomeScreen(),
-        'title': 'SuperMovies',
+        'title': 'SuperMovie',
       },
       {
         'page': DetailMovie(),
@@ -55,9 +55,9 @@ class _BottomNavState extends State<BottomNav> {
         drawer: MainDrawer(),
         body: _pages[_selectedPagesIndex]['page'],
         bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.red,
+            backgroundColor: Theme.of(context).primaryColor,
             unselectedItemColor: Colors.white,
-            selectedItemColor: Colors.yellow,
+            selectedItemColor: Theme.of(context).accentColor,
             currentIndex: _selectedPagesIndex,
             items: [
               BottomNavigationBarItem(

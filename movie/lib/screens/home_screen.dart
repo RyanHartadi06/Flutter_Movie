@@ -5,7 +5,7 @@ import '../widgets/category_list.dart';
 import '../widgets/movie_list.dart';
 
 class HomeScreen extends StatelessWidget {
-  //List of Map
+  //NOTE: List of Map
   var menuItem = [
     {'images': 'images/category/action.png', 'text': 'Action'},
     {'images': 'images/category/adventure.png', 'text': 'Adventure'},
@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
     {'images': 'images/category/sciencefiction.png', 'text': 'sciencefiction'},
     {'images': 'images/category/thriller.png', 'text': 'thriller'},
   ];
-  //List
+  //NOTE: List
   List<String> topmovies = [
     'images/movieimages/1.jpg',
     'images/movieimages/2.jpg',
@@ -39,10 +39,6 @@ class HomeScreen extends StatelessWidget {
       children: [
         ListCarousel(),
         GreyArea(),
-        Text(
-          "Lihat Semua",
-          style: TextStyle(color: Colors.blue, fontSize: 17.0),
-        ),
         CategoryList(menuItem: menuItem),
         GreyArea(),
         MovieList(title: "Top Rated", movieData: topmovies),

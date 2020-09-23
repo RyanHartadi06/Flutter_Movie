@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie/screens/detail_movie.dart';
 
 Widget BuildListTile(String title, IconData icon, Function onTapHandler) {
   return ListTile(
@@ -43,7 +44,8 @@ class MainDrawer extends StatelessWidget {
           ),
           BuildListTile('Home', Icons.home, () {
             debugPrint("Test Home");
-            Navigator.pop(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DetailMovie()));
           }),
           Divider(),
           BuildListTile('Home 1', Icons.home, () {

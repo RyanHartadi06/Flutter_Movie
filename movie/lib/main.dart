@@ -5,8 +5,6 @@ import 'screens/bottom_nav.dart';
 
 void main() {
   runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'SuperMovies',
     home: MyApp(),
   ));
 }
@@ -20,7 +18,22 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'SuperMovie',
+      theme: ThemeData(
+          primarySwatch: Colors.red,
+          accentColor: Colors.amberAccent,
+          canvasColor: Colors.white,
+          fontFamily: 'Raleway',
+          textTheme: ThemeData.light().textTheme.copyWith(
+              body1: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+              body2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+              subtitle: TextStyle(
+                  fontSize: 15,
+                  color: Colors.blue,
+                  fontFamily: 'RobotoCondensed',
+                  fontWeight: FontWeight.bold))),
+      // initialRoute: '/detail-movie',
       routes: {
         '/': (context) => BottomNav(),
         '/detail-movie': (context) => DetailMovie()
