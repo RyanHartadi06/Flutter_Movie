@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie/models/coming_soon.dart';
+import 'package:movie/models/top_rated.dart';
 import 'package:movie/widgets/list_carousel.dart';
 import '../widgets/grey_area.dart';
 import '../widgets/category_list.dart';
@@ -19,20 +21,23 @@ class HomeScreen extends StatelessWidget {
     {'images': 'images/category/thriller.png', 'text': 'thriller'},
   ];
   //NOTE: List
-  List<String> topmovies = [
-    'images/movieimages/1.jpg',
-    'images/movieimages/2.jpg',
-    'images/movieimages/3.jpg',
-    'images/movieimages/4.jpg',
-    'images/movieimages/5.jpg',
-  ];
-  List<String> comingsoon = [
-    'images/movieimages/6.jpg',
-    'images/movieimages/7.jpg',
-    'images/movieimages/8.jpg',
-    'images/movieimages/9.jpg',
-    'images/movieimages/10.jpg',
-  ];
+  // List<String> topmovies = [
+  //   'images/movieimages/1.jpg',
+  //   'images/movieimages/2.jpg',
+  //   'images/movieimages/3.jpg',
+  //   'images/movieimages/4.jpg',
+  //   'images/movieimages/5.jpg',
+  // ];
+  // List<String> comingsoon = [
+  //   'images/movieimages/6.jpg',
+  //   'images/movieimages/7.jpg',
+  //   'images/movieimages/8.jpg',
+  //   'images/movieimages/9.jpg',
+  //   'images/movieimages/10.jpg',
+  // ];
+  List<String> comingSoonMovies =
+      coming_soon.map((e) => e.imageUrl).take(4).toList();
+  List<String> top = top_rated_movie.map((e) => e.imageUrl).take(4).toList();
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -41,9 +46,9 @@ class HomeScreen extends StatelessWidget {
         GreyArea(),
         CategoryList(menuItem: menuItem),
         GreyArea(),
-        MovieList(title: "Top Rated", movieData: topmovies),
+        MovieList(title: "Top Rated", movieData: top),
         GreyArea(),
-        MovieList(title: "Coming Soon", movieData: comingsoon),
+        MovieList(title: "Coming Soon", movieData: comingSoonMovies),
       ],
     );
   }

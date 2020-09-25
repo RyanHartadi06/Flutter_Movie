@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie/screens/detail_movie.dart';
+import 'package:movie/screens/movie_list_screen.dart';
 
 Widget BuildListTile(String title, IconData icon, Function onTapHandler) {
   return ListTile(
@@ -42,15 +43,16 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
           ),
-          BuildListTile('Home', Icons.home, () {
+          BuildListTile('Detail Movie', Icons.home, () {
             debugPrint("Test Home");
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => DetailMovie()));
           }),
           Divider(),
-          BuildListTile('Home 1', Icons.home, () {
+          BuildListTile('Movie List', Icons.home, () {
             debugPrint("Test Home 1");
-            Navigator.pop(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MovieListScreen()));
           }),
           Divider(),
           BuildListTile('Home 2', Icons.home, () {
