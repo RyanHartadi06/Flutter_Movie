@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class MovieList extends StatelessWidget {
   final String title;
   final List<String> movieData;
+  final Function onTap;
 
-  MovieList({@required this.title, @required this.movieData});
+  MovieList({@required this.title, @required this.movieData, this.onTap});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,9 +35,7 @@ class MovieList extends StatelessWidget {
                             style:
                                 TextStyle(color: Colors.blue, fontSize: 17.0),
                           ),
-                          onTap: () {
-                            debugPrint("On Click Lihat ");
-                          },
+                          onTap: onTap,
                         ),
                       ),
                     ],

@@ -11,6 +11,7 @@ class DetailMovie extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
+          //TODO : Ini buat sebuah background biar blur
           Image.asset(
             'images/movieimages/1.jpg',
             fit: BoxFit.cover,

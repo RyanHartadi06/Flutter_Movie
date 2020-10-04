@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 
-class TopRated {
+class Movie {
   final String id, title, description, imageUrl;
 
-  TopRated({
+  Movie({
     @required this.id,
     @required this.title,
     @required this.description,
@@ -11,28 +11,28 @@ class TopRated {
   });
 }
 
-final List<TopRated> top_rated_movie = [
-  TopRated(
+final List<Movie> top_movie = [
+  Movie(
       id: '1',
       title: 'Dora',
       description: 'Ini Deskripsi',
       imageUrl: 'images/movieimages/1.jpg'),
-  TopRated(
+  Movie(
       id: '2',
       title: 'Naruto',
       description: 'Ini Deskripsi',
       imageUrl: 'images/movieimages/2.jpg'),
-  TopRated(
+  Movie(
       id: '3',
       title: 'Saske',
       description: 'Ini Deskripsi',
       imageUrl: 'images/movieimages/3.jpg'),
-  TopRated(
+  Movie(
       id: '4',
       title: 'Gaara',
       description: 'Ini Deskripsi',
       imageUrl: 'images/movieimages/4.jpg'),
-  TopRated(
+  Movie(
       id: '5',
       title: 'Madara',
       description: 'Ini Deskripsi',

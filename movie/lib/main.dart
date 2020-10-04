@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie/screens/bottom_nav.dart';
+import 'package:movie/screens/coming_soon_screen.dart';
 import 'package:movie/screens/detail_movie.dart';
+import 'package:movie/screens/top_movie_screen.dart';
 import 'screens/bottom_nav.dart';
 
 void main() {
@@ -36,6 +38,8 @@ class _MyAppState extends State<MyApp> {
       // initialRoute: '/detail-movie',
       routes: {
         '/': (context) => BottomNav(),
+        '/comingsoon': (context) => ComingSoonScreen(),
+        '/topmovie': (context) => TopMovieScreen(),
         '/detail-movie': (context) => DetailMovie()
       },
     );

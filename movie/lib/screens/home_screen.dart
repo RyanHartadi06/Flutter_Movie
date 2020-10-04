@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:movie/models/category.dart';
 import 'package:movie/models/coming_soon.dart';
-import 'package:movie/models/top_rated.dart';
+import 'package:movie/models/movie.dart';
 import 'package:movie/widgets/list_carousel.dart';
 import '../widgets/grey_area.dart';
 import '../widgets/category_list.dart';
@@ -8,18 +9,18 @@ import '../widgets/movie_list.dart';
 
 class HomeScreen extends StatelessWidget {
   //NOTE: List of Map
-  var menuItem = [
-    {'images': 'images/category/action.png', 'text': 'Action'},
-    {'images': 'images/category/adventure.png', 'text': 'Adventure'},
-    {'images': 'images/category/comedy.png', 'text': 'comedy'},
-    {'images': 'images/category/crime.png', 'text': 'crime'},
-    {'images': 'images/category/drama.png', 'text': 'drama'},
-    {'images': 'images/category/fantasy.png', 'text': 'fantasy'},
-    {'images': 'images/category/kids.png', 'text': 'kids'},
-    {'images': 'images/category/mistery.png', 'text': 'mistery'},
-    {'images': 'images/category/sciencefiction.png', 'text': 'sciencefiction'},
-    {'images': 'images/category/thriller.png', 'text': 'thriller'},
-  ];
+  // var menuItem = [
+  //   {'images': 'images/category/action.png', 'text': 'Action'},
+  //   {'images': 'images/category/adventure.png', 'text': 'Adventure'},
+  //   {'images': 'images/category/comedy.png', 'text': 'comedy'},
+  //   {'images': 'images/category/crime.png', 'text': 'crime'},
+  //   {'images': 'images/category/drama.png', 'text': 'drama'},
+  //   {'images': 'images/category/fantasy.png', 'text': 'fantasy'},
+  //   {'images': 'images/category/kids.png', 'text': 'kids'},
+  //   {'images': 'images/category/mistery.png', 'text': 'mistery'},
+  //   {'images': 'images/category/sciencefiction.png', 'text': 'sciencefiction'},
+  //   {'images': 'images/category/thriller.png', 'text': 'thriller'},
+  // ];
   //NOTE: List
   // List<String> topmovies = [
   //   'images/movieimages/1.jpg',
@@ -37,18 +38,30 @@ class HomeScreen extends StatelessWidget {
   // ];
   List<String> comingSoonMovies =
       coming_soon.map((e) => e.imageUrl).take(4).toList();
-  List<String> top = top_rated_movie.map((e) => e.imageUrl).take(4).toList();
+  List<String> top = top_movie.map((e) => e.imageUrl).take(4).toList();
+  // List<String> datakategori = category_list.map()
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: [
         ListCarousel(),
         GreyArea(),
-        CategoryList(menuItem: menuItem),
+        CategoryList(),
         GreyArea(),
-        MovieList(title: "Top Rated", movieData: top),
+        MovieList(
+            title: "Coming Soon",
+            movieData: comingSoonMovies,
+            onTap: () {
+              Navigator.pushNamed(context, '/comingsoon');
+            }),
         GreyArea(),
-        MovieList(title: "Coming Soon", movieData: comingSoonMovies),
+        MovieList(
+          title: "Top Movie",
+          movieData: top,
+          onTap: () {
+            Navigator.pushNamed(context, '/topmovie');
+          },
+        ),
       ],
     );
   }
