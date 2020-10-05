@@ -24,6 +24,10 @@ class CategoryList extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     debugPrint(kategori_list[index].id);
+                    Navigator.of(context).pushNamed('/movie', arguments: {
+                      'id': kategori_list[index].id,
+                      'kategori': kategori_list[index].kategori,
+                    });
                   },
                   child: Container(
                     height: 45.0,
